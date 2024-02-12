@@ -1,1 +1,29 @@
+Email Slicer technique is a way to check wether mail is valid or not
+
+There are several steps we follow as shown below :
+
+  1. Take input from user in the form of mail id.(Example : deepak@gmail.com, d@info.in)
+    mail = input("enter your mail here : ")
+
+  2. Count "@" character in provided mail id and save into "count_atrate" variable
+    count_atrate = mail.count("@")
+
+  3. Check if "@" is equal to 1 then we proceed otherwise we print invalid mail
+    if count_atrate==1:
+
+       3.1.1. Find the index value of "@" and  save into "atrate_index" variable
+         atrate_index = mail.index("@")
+
+      3.1.2. Check there is atleast one character present in the username else we print invalid mail
+         if len(mail[:atrate_index])>0:
+
+        3.1.2.1. Check there is atleast three characters present in the domain else we print invalid mail
+                 if len(mail[atrate_index+1:])>3:
+
+          3.1.2.1.1. Check there is only one dot character present in the domain else we print invalid mail
+                   if mail[atrate_index+1:].count(".")==1:
+                      3.1.2.1.1.1. Now Finally display the username, domain and email id
+                                    print("Your mail Id : ",mail)
+                                    print("Your Username : ",mail[:atrate_index])
+                                    print("Your Domain : ",mail[atrate_index+1:])
 
