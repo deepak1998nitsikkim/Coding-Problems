@@ -1,14 +1,9 @@
-coins =0
-l = []
+currency =0
+l = [2000,1000,500,200,100,50,20,10,5,2,1]
 l1=[]
+l2=[]
 m=0
 a = int(input('enter your amount : '))
-n = int(input('How many diffferent types of coins we want to use : '))
-
-for i in range(n):
-    x= int(input('enter coin price : '))
-    l.append(x)
-
 while a>0:
     for i in l:
         if i<=a:
@@ -18,12 +13,13 @@ while a>0:
     # print('\n')
     
     m=max(l1)
+    l2.append(m)
     print(m)
     
     l1=[]
     
     a=a-m
     
-    coins+=1
-print('total coins used : ',coins)
-
+    currency+=1
+print('total notes/coins used : ',currency)
+print('total unique notes/coins used : ',len(set(l2)))
